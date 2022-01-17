@@ -1,4 +1,9 @@
 footer {
   margin-top: 30px;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 30px;
+  display: flow;
+
 }

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+@import  "@angular/material/prebuilt-themes/purple-green.css";
 
 * {
   box-sizing: border-box;
@@ -6,8 +7,39 @@
   padding: 0;
 }
 
-body {
+body /*Dark Mode*/ {
   font-family: "Poppins", sans-serif;
+  background-color: #0f0f0f;
+  --task-color: #3b3b3b;
+  color: #fffcfc;
+  --btn-color: #ff0000;
+  --input-color:black;
+  --border-color:#ff0000;
+  --container-color:#ff0000;
+  --font-color:white;
+  --reminder-color:#ff0000;
+  --btn-save-task:#ff0000;
+  --delete-btn:#ff0000;
+  --add-btn:#ff0000;
+
+}
+
+body.light-mode {
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+  --task-color: #f4f4f4;
+  --btn-color: lightgreen;
+  --input-color:white;
+  --border-color:lightgreen;
+  --container-color: lightgreen;
+  --font-color:black;
+  --reminder-color: lightgreen;
+  --btn-save-task: lightgreen;
+  --delete-btn:lightgreen;
+  --add-btn:lightgreen;
+
+
 }
 
 .container {
@@ -15,14 +47,14 @@ body {
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
-  border: 1px solid steelblue;
+  border: 1px solid var(--container-color);
   padding: 30px;
   border-radius: 5px;
 }
 .btn {
   display: inline-block;
-  background: #000;
-  color: #fff;
+  background: var(--btn-color);
+  color: black;
   border: none;
   padding: 10px 20px;
   margin: 5px;
@@ -46,6 +78,7 @@ body {
 
 .form-control {
   margin: 20px 0;
+  ;
 }
 
 .form-control label {
@@ -58,6 +91,9 @@ body {
   margin: 5px;
   padding: 3px 7px;
   font-size: 17px;
+  background-color: var(--input-color);
+  border-color: var(--border-color);
+  color: var(--font-color);
 }
 
 .form-control-check {
@@ -74,3 +110,6 @@ body {
   flex: 2;
   height: 20px;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

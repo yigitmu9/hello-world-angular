@@ -7,12 +7,27 @@ import { HeaderComponent } from './components/header/header.component';
 import { ButtonComponent } from './components/button/button.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { TaskItemComponent } from './components/task-item/task-item.component';
-import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms'
-import {RouterModule, Routes} from "@angular/router";
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'
+import { RouterModule, Routes } from "@angular/router";
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatExpansionModule } from "@angular/material/expansion";
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatInputModule } from '@angular/material/input';
+
+
 
 const appRoutes: Routes = [
   {path: '', component:TasksComponent},
@@ -30,6 +45,7 @@ const appRoutes: Routes = [
     AddTaskComponent,
     AboutComponent,
     FooterComponent
+
   ],
   imports: [
     BrowserModule,
@@ -37,9 +53,24 @@ const appRoutes: Routes = [
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes, {enableTracing: true})
+    RouterModule.forRoot(appRoutes, {enableTracing: true}),
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSlideToggleModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatSliderModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
