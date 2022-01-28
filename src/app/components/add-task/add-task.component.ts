@@ -3,6 +3,7 @@ import {Task} from "../../Task";
 import {Subscription} from "rxjs";
 import {UiService} from "../../services/ui.service";
 
+
 @Component({
   selector: 'app-add-task',
   templateUrl: './add-task.component.html',
@@ -47,3 +48,11 @@ export class AddTaskComponent implements OnInit {
   }
 
 }
+
+
+/*
+* <div class ="form-control">
+    <label for ="day">Day & Time</label>
+    <input type="text" name="day" id="day" [(ngModel)]="day" placeholder="Add Day & Time"/>
+  </div>
+* */

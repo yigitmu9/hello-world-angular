@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-footer',
@@ -17,32 +17,23 @@ export class FooterComponent implements OnInit {
   toggle!: boolean;
 
 
-
-
-
   toggleLightTheme(): void {
-    if (this.filteringSchedule == false) {
-      document.body.classList.add('light-mode');
-    }
-    if (this.filteringSchedule == true) {
       document.body.classList.toggle('light-mode');
-    }
-
   }
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.filteringSchedule = JSON.parse(localStorage.getItem('toggleButtonState') as string);
     console.log(this.filteringSchedule);
+    if (this.filteringSchedule == true) {
+      document.body.classList.add('light-mode');
+    }
   }
-
-
 
   onChange(ob: MatSlideToggleChange) {
     this.filteringSchedule = !this.filteringSchedule;
     localStorage.setItem('toggleButtonState', JSON.stringify(this.filteringSchedule));
-
   }
 
 }
