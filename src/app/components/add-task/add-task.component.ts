@@ -13,6 +13,7 @@ export class AddTaskComponent implements OnInit {
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter();
   text!: string;
   day!: string;
+  time!: string;
   reminder: boolean = false;
   id!: number;
   showAddTask!: boolean;
@@ -36,12 +37,14 @@ export class AddTaskComponent implements OnInit {
       id:this.id,
       text: this.text,
       day: this.day,
+      time: this.time,
       reminder: this.reminder,
     };
 
     this.onAddTask.emit(newTask);
     this.text='';
     this.day='';
+    this.time='';
     this.reminder=false;
 
 

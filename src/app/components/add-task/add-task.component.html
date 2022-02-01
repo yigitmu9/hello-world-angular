@@ -4,12 +4,20 @@
     <input type="text" name="text" id="text" [(ngModel)]="text" placeholder="Add Task"/>
   </div>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Choose a date</mat-label>
-    <input matInput [matDatepicker]="picker">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
+
+  <div class ="form-control">
+    <label for ="day">Day</label>
+    <input (click)="picker.open()" name="day" id="day"  placeholder="Choose a day" [(ngModel)]="day"  [matDatepicker]="picker">
+
+    <mat-datepicker color="warn" #picker></mat-datepicker>
+  </div>
+
+
+  <div class="form-control">
+    <label for ="time">Time</label>
+    <input name="time" id="time" [(ngModel)]="time" placeholder="Choose time" aria-label="24hr format" [ngxTimepicker]="fullTime" [format]="24"  readonly>
+    <ngx-material-timepicker #fullTime></ngx-material-timepicker>
+  </div>
 
 
   <div class ="form-control form-control-check">

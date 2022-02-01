@@ -60,6 +60,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 
 
 const appRoutes: Routes = [
@@ -150,6 +151,7 @@ const appRoutes: Routes = [
     MatSliderModule,
     MatExpansionModule,
     MatDatepickerModule,
+    [NgxMaterialTimepickerModule],
 
   ],
   providers: [],

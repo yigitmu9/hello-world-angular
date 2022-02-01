@@ -21,6 +21,7 @@ body /*Dark Mode*/ {
   --btn-save-task:#ff0000;
   --delete-btn:#ff0000;
   --add-btn:#ff0000;
+  --calender-color: #3b3b3b;
 
 }
 
@@ -38,7 +39,15 @@ body.light-mode {
   --btn-save-task: lightgreen;
   --delete-btn:lightgreen;
   --add-btn:lightgreen;
+  --calender-color: lightgreen;
 
+
+}
+
+
+
+.mat-calendar {
+  background-color: var(--calender-color);
 
 }
 
@@ -114,3 +123,4 @@ body.light-mode {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
