@@ -27,13 +27,6 @@
       "time": "13:30",
       "reminder": false,
       "id": 9
-    },
-    {
-      "text": "Test3",
-      "day": "2022-02-15T21:00:00.000Z",
-      "time": "23:56",
-      "reminder": false,
-      "id": 10
     }
   ]
 }

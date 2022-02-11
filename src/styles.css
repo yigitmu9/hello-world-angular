@@ -22,6 +22,9 @@ body /*Dark Mode*/ {
   --delete-btn:#ff0000;
   --add-btn:#ff0000;
   --calender-color: #3b3b3b;
+  --cancel-btn-background: #0f0f0f;
+  --dialog-background: #3b3b3b;
+  --dialog-font-color: white;
 
 }
 
@@ -40,6 +43,9 @@ body.light-mode {
   --delete-btn:lightgreen;
   --add-btn:lightgreen;
   --calender-color: lightgreen;
+  --cancel-btn-background: #ffffff;
+  --dialog-background: #f4f4f4;
+  --dialog-font-color: black;
 
 
 }
@@ -124,3 +130,23 @@ body.light-mode {
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.cancel-button {
+  display: inline-block;
+  background: var(--cancel-btn-background);
+  color: var(--btn-color);
+  border-color: var(--btn-color);
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+  display: block;
+  width: 100%;
+}
+
+.mat-dialog-container {
+  background: var(--dialog-background);
+  color: var(--dialog-font-color);
+}

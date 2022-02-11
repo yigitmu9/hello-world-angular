@@ -61,6 +61,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { EditPopupComponent } from './components/edit-popup/edit-popup.component';
+
 
 
 const appRoutes: Routes = [
@@ -78,7 +80,8 @@ const appRoutes: Routes = [
     TaskItemComponent,
     AddTaskComponent,
     AboutComponent,
-    FooterComponent
+    FooterComponent,
+    EditPopupComponent
 
   ],
 
