@@ -27,6 +27,7 @@ export class TasksComponent implements OnInit {
 
   editTask(task: Task) {
 
+
   }
 
   toggleReminder(task:Task) {

@@ -1,21 +1,22 @@
 <form  class="add-form" >
   <div class ="form-control">
     <label for ="text">Task</label>
-    <input type="text" name="text" id="text"  placeholder="Add Task"/>
+    <input type="text"  name="text" id="text"  placeholder="{{task.text}}"/>
   </div>
 
 
   <div class ="form-control">
     <label for ="day">Day</label>
-    <input (click)="picker.open()" name="day" id="day"  placeholder="Choose a day"   [matDatepicker]="picker">
+    <input (click)="picker.open()" name="day" id="day" placeholder="{{task.day}}"   [matDatepicker]="picker">
 
     <mat-datepicker color="warn" #picker></mat-datepicker>
   </div>
 
 
   <div class="form-control">
+
     <label for ="time">Time</label>
-    <input name="time" id="time"  placeholder="Choose time" aria-label="24hr format" [ngxTimepicker]="fullTime" [format]="24"  readonly>
+    <input name="time" id="time"   placeholder="{{task.time}}" aria-label="24hr format" [ngxTimepicker]="fullTime" [format]="24"  readonly>
     <ngx-material-timepicker #fullTime></ngx-material-timepicker>
   </div>
 

@@ -5,7 +5,6 @@
 >
   <h3>
     {{ task.text }}
-
     <fa-icon
       (click)="onDelete()"
       [ngStyle]="{ color: 'var(--delete-btn)' }"
@@ -15,7 +14,7 @@
 
   <p>{{ task.day.substring(0,10) }} at {{task.time}}
     <fa-icon
-      (click)="openDialog()"
+      (click)="openDialog() "
       [ngStyle]="{ color: 'var(--delete-btn)' }"
       [icon]="faEdit"
     ></fa-icon>
