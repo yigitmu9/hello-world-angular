@@ -7,8 +7,7 @@
 
   <div class ="form-control">
     <label for ="day">Day</label>
-    <input (click)="picker.open()" name="day" id="day" placeholder="{{task.day}}"   [matDatepicker]="picker">
-
+    <input (click)="picker.open()" name="day" id="day" placeholder="{{task.day}}"  [matDatepicker]="picker">
     <mat-datepicker color="warn" #picker></mat-datepicker>
   </div>
 

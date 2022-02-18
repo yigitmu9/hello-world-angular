@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Task } from '../../Task';
 import { TaskService } from '../../services/task.service';
+import {FormBuilder, FormArray, FormGroup} from "@angular/forms";
+
 
 @Component({
   selector: 'app-edit-popup',
