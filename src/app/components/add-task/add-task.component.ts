@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {Task} from "../../Task";
 import {Subscription} from "rxjs";
 import {UiService} from "../../services/ui.service";
+import {FormBuilder, FormArray, FormGroup} from "@angular/forms";
 
 
 @Component({
@@ -10,6 +11,12 @@ import {UiService} from "../../services/ui.service";
   styleUrls: ['./add-task.component.css']
 })
 export class AddTaskComponent implements OnInit {
+  addTaskForm= this.fb.group ({
+    text: [''],
+    day: [''],
+    time:[''],
+    reminder:['']
+  })
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter();
   text!: string;
   day!: string;
@@ -20,7 +27,7 @@ export class AddTaskComponent implements OnInit {
   subscription: Subscription;
 
 
-  constructor(private uiService: UiService) {
+  constructor(private uiService: UiService,private fb: FormBuilder) {
     this.subscription = this.uiService
       .onToggle()
       .subscribe((value) => (this.showAddTask = value));
