@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 @import  "@angular/material/prebuilt-themes/purple-green.css";
 
 * {
@@ -8,7 +7,6 @@
 }
 
 body /*Dark Mode*/ {
-  font-family: "Poppins", sans-serif;
   background-color: #0f0f0f;
   --task-color: #3b3b3b;
   color: #fffcfc;
@@ -25,11 +23,9 @@ body /*Dark Mode*/ {
   --cancel-btn-background: #0f0f0f;
   --dialog-background: #3b3b3b;
   --dialog-font-color: white;
-
 }
 
 body.light-mode {
-  font-family: "Poppins", sans-serif;
   background-color: #ffffff;
   color: #000000;
   --task-color: #f4f4f4;
@@ -46,15 +42,10 @@ body.light-mode {
   --cancel-btn-background: #ffffff;
   --dialog-background: #f4f4f4;
   --dialog-font-color: black;
-
-
 }
-
-
 
 .mat-calendar {
   background-color: var(--calender-color);
-
 }
 
 .container {
@@ -78,11 +69,12 @@ body.light-mode {
   cursor: pointer;
   text-decoration: none;
   font-size: 15px;
-  font-family: inherit;
 }
+
 .btn:focus {
   outline: none;
 }
+
 .btn:active {
   transform: scale(0.98);
 }
@@ -94,7 +86,6 @@ body.light-mode {
 
 .form-control {
   margin: 20px 0;
-  ;
 }
 
 .form-control label {
@@ -127,8 +118,7 @@ body.light-mode {
   height: 20px;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
 
 .cancel-button {
   display: inline-block;
@@ -141,7 +131,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   cursor: pointer;
   text-decoration: none;
   font-size: 15px;
-  font-family: inherit;
   width: 100%;
 }
 
@@ -149,3 +138,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background: var(--dialog-background);
   color: var(--dialog-font-color);
 }
+
+.timepicker-overlay {
+  z-index: 10000000 !important;
+}
+
+.timepicker-backdrop-overlay {
+  z-index: 10000000 !important;
+}
+
+

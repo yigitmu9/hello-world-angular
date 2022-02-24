@@ -4,6 +4,8 @@ import { TaskService } from '../../services/task.service';
 import {UiService} from "../../services/ui.service";
 import {FormBuilder, FormArray, FormGroup} from "@angular/forms";
 import {Subscription} from "rxjs";
+import {NgxMaterialTimepickerTheme} from "ngx-material-timepicker";
+import {DateAdapter} from "@angular/material/core";
 
 
 @Component({
@@ -30,10 +32,11 @@ export class EditPopupComponent implements OnInit {
   showAddTask!: boolean;
   subscription: Subscription;
 
-  constructor(private taskService: TaskService,private uiService: UiService, private fb: FormBuilder) {
+  constructor(private taskService: TaskService,private uiService: UiService, private fb: FormBuilder,private dateAdapter: DateAdapter<Date>) {
     this.subscription = this.uiService
       .onToggle()
       .subscribe((value) => (this.showAddTask = value));
+    this.dateAdapter.setLocale('tr');
   }
 
   ngOnInit(): void {
@@ -60,6 +63,22 @@ export class EditPopupComponent implements OnInit {
     this.reminder2=false;
 
 
+  }
+
+  darkTimePicker: NgxMaterialTimepickerTheme = {
+
+    container: {
+      bodyBackgroundColor: '#424242',
+      buttonColor: '#fff'
+    },
+    dial: {
+      dialBackgroundColor: '#555',
+    },
+    clockFace: {
+      clockFaceBackgroundColor: '#555',
+      clockHandColor: '#ff0000',
+      clockFaceTimeInactiveColor: '#fff'
+    }
   }
 
 }

@@ -9,14 +9,14 @@
   <div class ="form-control">
     <label for ="day2">Day</label>
     <input (click)="picker.open()" formControlName="day2" id="day2"  placeholder="Choose a day"  [matDatepicker]="picker">
-    <mat-datepicker color="warn" #picker></mat-datepicker>
+    <mat-datepicker color="warn" #picker ></mat-datepicker>
   </div>
 
 
   <div class ="form-control">
     <label for ="time2">Time</label>
     <input formControlName="time2" id="time2"  placeholder="Choose time" aria-label="24hr format" [ngxTimepicker]="fullTime" [format]="24"  readonly>
-    <ngx-material-timepicker #fullTime></ngx-material-timepicker>
+    <ngx-material-timepicker #fullTime [theme]="darkTimePicker" ></ngx-material-timepicker>
   </div>
 
 

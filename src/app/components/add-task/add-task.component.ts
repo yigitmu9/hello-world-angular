@@ -3,6 +3,8 @@ import {Task} from "../../Task";
 import {Subscription} from "rxjs";
 import {UiService} from "../../services/ui.service";
 import {FormBuilder, FormArray, FormGroup} from "@angular/forms";
+import {NgxMaterialTimepickerTheme} from "ngx-material-timepicker";
+import {DateAdapter} from "@angular/material/core";
 
 
 @Component({
@@ -27,10 +29,11 @@ export class AddTaskComponent implements OnInit {
   subscription: Subscription;
 
 
-  constructor(private uiService: UiService,private fb: FormBuilder) {
+  constructor(private uiService: UiService,private fb: FormBuilder,private dateAdapter: DateAdapter<Date>) {
     this.subscription = this.uiService
       .onToggle()
       .subscribe((value) => (this.showAddTask = value));
+    this.dateAdapter.setLocale('tr');
   }
 
   ngOnInit(): void {
@@ -57,12 +60,21 @@ export class AddTaskComponent implements OnInit {
 
   }
 
+  darkTimePicker: NgxMaterialTimepickerTheme = {
+
+    container: {
+      bodyBackgroundColor: '#424242',
+      buttonColor: '#fff'
+    },
+    dial: {
+      dialBackgroundColor: '#555',
+    },
+    clockFace: {
+      clockFaceBackgroundColor: '#555',
+      clockHandColor: '#ff0000',
+      clockFaceTimeInactiveColor: '#fff'
+    }
+  }
+
 }
 
-
-/*
-* <div class ="form-control">
-    <label for ="day">Day & Time</label>
-    <input type="text" name="day" id="day" [(ngModel)]="day" placeholder="Add Day & Time"/>
-  </div>
-* */
