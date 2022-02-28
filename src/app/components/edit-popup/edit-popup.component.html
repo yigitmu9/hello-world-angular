@@ -2,7 +2,7 @@
 
   <div class ="form-control">
     <label for ="text2">Task</label>
-    <input type="text2" formControlName="text2" id="text2"  placeholder="Add Task"/>
+    <input matInput type="text2" formControlName="text2" id="text2"  placeholder="Add Task" value="Test" [(ngModel)]="task.text"/>
   </div>
 
 
@@ -15,7 +15,7 @@
 
   <div class ="form-control">
     <label for ="time2">Time</label>
-    <input formControlName="time2" id="time2"  placeholder="Choose time" aria-label="24hr format" [ngxTimepicker]="fullTime" [format]="24"  readonly>
+    <input formControlName="time2" id="time2"  placeholder="Choose time" aria-label="24hr format" [ngxTimepicker]="fullTime" [format]="24" readonly>
     <ngx-material-timepicker #fullTime [theme]="darkTimePicker" ></ngx-material-timepicker>
   </div>
 

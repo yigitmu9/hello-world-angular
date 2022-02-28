@@ -6,6 +6,7 @@ import {FormBuilder, FormArray, FormGroup} from "@angular/forms";
 import {Subscription} from "rxjs";
 import {NgxMaterialTimepickerTheme} from "ngx-material-timepicker";
 import {DateAdapter} from "@angular/material/core";
+import {MatInputModule} from '@angular/material/input';
 
 
 @Component({
@@ -14,7 +15,8 @@ import {DateAdapter} from "@angular/material/core";
   styleUrls: ['./edit-popup.component.css']
 })
 export class EditPopupComponent implements OnInit {
-  editTaskForm= this.fb.group ({
+
+  editTaskForm = this.fb.group ({
     text2: [''],
     day2: [''],
     time2:[''],
@@ -32,6 +34,7 @@ export class EditPopupComponent implements OnInit {
   showAddTask!: boolean;
   subscription: Subscription;
 
+
   constructor(private taskService: TaskService,private uiService: UiService, private fb: FormBuilder,private dateAdapter: DateAdapter<Date>) {
     this.subscription = this.uiService
       .onToggle()
@@ -44,10 +47,14 @@ export class EditPopupComponent implements OnInit {
   }
 
   onClick() {
-    alert();
+    this.taskService
+      .deleteTask(this.task)
+      .subscribe(
+        () => (this.tasks = this.tasks.filter((t) => t.id !== this.task.id))
+      );
 
 
-
+/*
     const newTask = {
       id:this.id2,
       text: this.text2,
@@ -61,7 +68,7 @@ export class EditPopupComponent implements OnInit {
     this.day2='';
     this.time2='';
     this.reminder2=false;
-
+*/
 
   }
 
