@@ -22,6 +22,7 @@ export class TaskItemComponent implements OnInit {
   ngOnInit(): void {}
 
   openDialog() {
+    console.log(this.task);
     this.dialogRef.open(EditPopupComponent);
   }
 

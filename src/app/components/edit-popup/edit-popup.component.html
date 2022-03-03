@@ -1,8 +1,8 @@
-<form  [formGroup]="editTaskForm" (ngSubmit)="onClick()">
+<form  [formGroup]="editTaskForm" (ngSubmit)="onUpdate()">
 
   <div class ="form-control">
     <label for ="text2">Task</label>
-    <input matInput type="text2" formControlName="text2" id="text2"  placeholder="Add Task" value="Test" [(ngModel)]="task.text"/>
+    <input matInput type="text2" formControlName="text2" id="text2"  placeholder="Add Task" value="Test" />
   </div>
 
 

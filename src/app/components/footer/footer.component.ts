@@ -25,7 +25,6 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
     this.filteringSchedule = JSON.parse(localStorage.getItem('toggleButtonState') as string);
-    console.log(this.filteringSchedule);
     if (this.filteringSchedule == true) {
       document.body.classList.add('light-mode');
     }

@@ -25,6 +25,7 @@ export class EditPopupComponent implements OnInit {
   tasks: Task[] = [];
   @Input() task!: Task;
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter();
+  @Output() onUpdateTask: EventEmitter<Task> = new EventEmitter();
 
   text2!: string;
   day2!: string;
@@ -46,30 +47,9 @@ export class EditPopupComponent implements OnInit {
     this.taskService.getTasks().subscribe((tasks) => (this.tasks = tasks));
   }
 
-  onClick() {
-    this.taskService
-      .deleteTask(this.task)
-      .subscribe(
-        () => (this.tasks = this.tasks.filter((t) => t.id !== this.task.id))
-      );
-
-
-/*
-    const newTask = {
-      id:this.id2,
-      text: this.text2,
-      day: this.day2,
-      time: this.time2,
-      reminder: this.reminder2,
-    };
-
-    this.onAddTask.emit(newTask);
-    this.text2='';
-    this.day2='';
-    this.time2='';
-    this.reminder2=false;
-*/
-
+  onUpdate() {
+    console.log(this.task);
+    this.onUpdateTask.emit(this.task);
   }
 
   darkTimePicker: NgxMaterialTimepickerTheme = {
