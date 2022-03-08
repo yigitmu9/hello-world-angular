@@ -17,21 +17,21 @@ import {MatInputModule} from '@angular/material/input';
 export class EditPopupComponent implements OnInit {
 
   editTaskForm = this.fb.group ({
-    text2: [''],
-    day2: [''],
-    time2:[''],
-    reminder2:['']
+    text: [''],
+    day: [''],
+    time:[''],
+    reminder:['']
   })
   tasks: Task[] = [];
   @Input() task!: Task;
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter();
   @Output() onUpdateTask: EventEmitter<Task> = new EventEmitter();
 
-  text2!: string;
-  day2!: string;
-  time2!: string;
-  reminder2: boolean = false;
-  id2!: number;
+  text!: string;
+  day!: string;
+  time!: string;
+  reminder: boolean = false;
+  id!: number;
   showAddTask!: boolean;
   subscription: Subscription;
 
@@ -48,8 +48,23 @@ export class EditPopupComponent implements OnInit {
   }
 
   onUpdate() {
-    console.log(this.task);
+    console.log(this.tasks);
     this.onUpdateTask.emit(this.task);
+
+    const updateTask = {
+      id:this.id,
+      text: this.text,
+      day: this.day,
+      time: this.time,
+      reminder: this.reminder,
+    };
+
+    this.onUpdateTask.emit(updateTask);
+    this.text='';
+    this.day='';
+    this.time='';
+    this.reminder=false;
+    this.taskService.addTask(this.task).subscribe((task) => (this.tasks.push(task)));
   }
 
   darkTimePicker: NgxMaterialTimepickerTheme = {

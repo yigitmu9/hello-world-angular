@@ -5,7 +5,7 @@
   (onDeleteTask)="deleteTask(task)"
   (onToggleReminder)="toggleReminder(task)">
 <app-edit-popup
-  (onUpdateTask)="updateTask(task)">
+  (onUpdateTask)="addTask($event)">
 </app-edit-popup>
 </app-task-item>
 
