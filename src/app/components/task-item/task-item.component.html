@@ -14,7 +14,7 @@
 
   <p>{{ task.day.substring(0,10) }} at {{task.time}}
     <fa-icon
-      (click)="openDialog() "
+      (click)="openDialog()"
       [ngStyle]="{ color: 'var(--delete-btn)' }"
       [icon]="faEdit"
     ></fa-icon>

@@ -37,7 +37,7 @@ export class AddTaskComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.addTaskForm.valueChanges.subscribe(console.log)
+
   }
   onSubmit() {
     if(!this.text) {

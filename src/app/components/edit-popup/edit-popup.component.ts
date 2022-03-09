@@ -17,54 +17,53 @@ import {MatInputModule} from '@angular/material/input';
 export class EditPopupComponent implements OnInit {
 
   editTaskForm = this.fb.group ({
-    text: [''],
-    day: [''],
-    time:[''],
-    reminder:['']
+    text2: [''],
+    day2: [''],
+    time2:[''],
+    reminder2:['']
   })
   tasks: Task[] = [];
   @Input() task!: Task;
-  @Output() onAddTask: EventEmitter<Task> = new EventEmitter();
   @Output() onUpdateTask: EventEmitter<Task> = new EventEmitter();
 
-  text!: string;
-  day!: string;
-  time!: string;
-  reminder: boolean = false;
+  text2!: string;
+  day2!: string;
+  time2!: string;
+  reminder2: boolean = false;
   id!: number;
-  showAddTask!: boolean;
+  showDialog!: boolean;
   subscription: Subscription;
 
 
   constructor(private taskService: TaskService,private uiService: UiService, private fb: FormBuilder,private dateAdapter: DateAdapter<Date>) {
     this.subscription = this.uiService
-      .onToggle()
-      .subscribe((value) => (this.showAddTask = value));
+      .onOpenDialog()
+      .subscribe((value) => (this.showDialog = value));
     this.dateAdapter.setLocale('tr');
   }
 
   ngOnInit(): void {
     this.taskService.getTasks().subscribe((tasks) => (this.tasks = tasks));
+    this.editTaskForm.valueChanges.subscribe(console.log)
   }
 
   onUpdate() {
     console.log(this.tasks);
-    this.onUpdateTask.emit(this.task);
+
 
     const updateTask = {
       id:this.id,
-      text: this.text,
-      day: this.day,
-      time: this.time,
-      reminder: this.reminder,
+      text: this.text2,
+      day: this.day2,
+      time: this.time2,
+      reminder: this.reminder2,
     };
 
     this.onUpdateTask.emit(updateTask);
-    this.text='';
-    this.day='';
-    this.time='';
-    this.reminder=false;
-    this.taskService.addTask(this.task).subscribe((task) => (this.tasks.push(task)));
+    this.text2='';
+    this.day2='';
+    this.time2='';
+    this.reminder2 = false;
   }
 
   darkTimePicker: NgxMaterialTimepickerTheme = {

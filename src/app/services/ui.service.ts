@@ -6,7 +6,10 @@ import {Observable, Subject} from 'rxjs'
 })
 export class UiService {
   private showAddTask: boolean = false;
+  private showDialog: boolean = false;
   private subject = new Subject<any>();
+  private subject2 = new Subject<any>();
+
 
   constructor() { }
 
@@ -18,4 +21,14 @@ export class UiService {
   onToggle(): Observable<any> {
     return this.subject.asObservable();
   }
+
+  openDialog(): void {
+    this.showDialog = !this.showDialog;
+    this.subject2.next(this.showDialog)
+  }
+
+  onOpenDialog(): Observable<any> {
+    return this.subject2.asObservable();
+  }
+
 }
