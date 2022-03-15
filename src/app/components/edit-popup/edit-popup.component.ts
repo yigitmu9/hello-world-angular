@@ -36,9 +36,7 @@ export class EditPopupComponent implements OnInit {
 
 
   constructor(private taskService: TaskService,private uiService: UiService, private fb: FormBuilder,private dateAdapter: DateAdapter<Date>) {
-    this.subscription = this.uiService
-      .onOpenDialog()
-      .subscribe((value) => (this.showDialog = value));
+    this.subscription = this.uiService.onOpenDialog().subscribe((value) => (this.showDialog = value))
     this.dateAdapter.setLocale('tr');
   }
 
