@@ -42,11 +42,14 @@ export class EditPopupComponent implements OnInit {
 
   ngOnInit(): void {
     this.taskService.getTasks().subscribe((tasks) => (this.tasks = tasks));
-    this.editTaskForm.valueChanges.subscribe(console.log)
   }
 
   onUpdate() {
-    console.log(this.tasks);
+
+    if(!this.text2 || !this.day2 || !this.time2) {
+      alert('Please write necessary informations!');
+      return;
+    }
 
 
     const updateTask = {
@@ -62,7 +65,11 @@ export class EditPopupComponent implements OnInit {
     this.day2='';
     this.time2='';
     this.reminder2 = false;
+    this.taskService.updateTask(updateTask).subscribe((task) => (this.tasks.push(task)));
+    this.showDialog = true;
+
   }
+
 
   darkTimePicker: NgxMaterialTimepickerTheme = {
 

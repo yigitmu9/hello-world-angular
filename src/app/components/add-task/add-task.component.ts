@@ -40,8 +40,8 @@ export class AddTaskComponent implements OnInit {
 
   }
   onSubmit() {
-    if(!this.text) {
-      alert('Please add a task!');
+    if(!this.text || !this.day || !this.time) {
+      alert('Please write necessary informations!');
       return;
     }
     const newTask = {
