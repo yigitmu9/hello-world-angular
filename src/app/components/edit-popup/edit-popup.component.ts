@@ -53,7 +53,7 @@ export class EditPopupComponent implements OnInit {
 
 
     const updateTask = {
-      id:this.id,
+      id: this.id,
       text: this.text2,
       day: this.day2,
       time: this.time2,

@@ -28,7 +28,7 @@ export class TaskItemComponent implements OnInit {
     console.log(this.task);
     this.dialogRef.open(EditPopupComponent);
     this.uiService.openDialog();
-    this.onOpenDialog.emit(this.task);
+    this.onOpenDialog.emit(this.task)
   }
 
   onDelete() {
